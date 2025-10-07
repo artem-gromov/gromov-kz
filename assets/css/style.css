@@ -395,16 +395,16 @@ a {
 @media (max-width: 960px) {
     .identity {
         grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
+        justify-items: left;
+        text-align: left;
     }
 
     .identity__meta {
-        align-items: center;
+        align-items: left;
     }
 
     .identity__list {
-        justify-items: center;
+        justify-items: left;
     }
 
     .metric--pulse {
