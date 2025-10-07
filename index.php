@@ -84,6 +84,117 @@ $age = $birthDate->diff(new DateTime())->y;
             </div>
         </section>
 
+        <section class="panel panel--stack">
+            <div class="panel__header">
+                <span class="panel__title">TECHNOLOGY MATRIX</span>
+                <span class="panel__status panel__status--blink">VERIFIED</span>
+            </div>
+            <div class="modules modules--stack">
+                <article class="module module--stack">
+                    <div class="module__heading">
+                        <span class="module__icon" aria-hidden="true" data-code="PL"></span>
+                        <div class="module__meta">
+                            <h2 class="module__title">Programming Languages</h2>
+                            <span class="module__subtitle">Cognitive routines engaged</span>
+                        </div>
+                    </div>
+                    <ul class="module__matrix">
+                        <li class="module__matrix-item">Python</li>
+                        <li class="module__matrix-item">SQL</li>
+                        <li class="module__matrix-item">Bash</li>
+                        <li class="module__matrix-item">Go</li>
+                    </ul>
+                </article>
+
+                <article class="module module--stack">
+                    <div class="module__heading">
+                        <span class="module__icon" aria-hidden="true" data-code="DE"></span>
+                        <div class="module__meta">
+                            <h2 class="module__title">Data Engineering</h2>
+                            <span class="module__subtitle">Pipelines and orchestration</span>
+                        </div>
+                    </div>
+                    <ul class="module__matrix">
+                        <li class="module__matrix-item">Airflow</li>
+                        <li class="module__matrix-item">dbt</li>
+                        <li class="module__matrix-item">Kafka</li>
+                        <li class="module__matrix-item">ClickHouse</li>
+                        <li class="module__matrix-item">PostgreSQL</li>
+                    </ul>
+                </article>
+
+                <article class="module module--stack">
+                    <div class="module__heading">
+                        <span class="module__icon" aria-hidden="true" data-code="IO"></span>
+                        <div class="module__meta">
+                            <h2 class="module__title">Infrastructure Ops</h2>
+                            <span class="module__subtitle">Deployment and control</span>
+                        </div>
+                    </div>
+                    <ul class="module__matrix">
+                        <li class="module__matrix-item">Docker</li>
+                        <li class="module__matrix-item">Kubernetes</li>
+                        <li class="module__matrix-item">GitHub Actions</li>
+                        <li class="module__matrix-item">Linux</li>
+                    </ul>
+                </article>
+
+                <article class="module module--stack">
+                    <div class="module__heading">
+                        <span class="module__icon" aria-hidden="true" data-code="AV"></span>
+                        <div class="module__meta">
+                            <h2 class="module__title">Analytics &amp; Viz</h2>
+                            <span class="module__subtitle">Situational awareness</span>
+                        </div>
+                    </div>
+                    <ul class="module__matrix">
+                        <li class="module__matrix-item">Metabase</li>
+                        <li class="module__matrix-item">Superset</li>
+                        <li class="module__matrix-item">Grafana</li>
+                        <li class="module__matrix-item">Plotly</li>
+                        <li class="module__matrix-item">Matplotlib</li>
+                        <li class="module__matrix-item">Jupyter</li>
+                    </ul>
+                </article>
+
+                <article class="module module--stack">
+                    <div class="module__heading">
+                        <span class="module__icon" aria-hidden="true" data-code="BA"></span>
+                        <div class="module__meta">
+                            <h2 class="module__title">Backend / API</h2>
+                            <span class="module__subtitle">Service interfaces</span>
+                        </div>
+                    </div>
+                    <ul class="module__matrix">
+                        <li class="module__matrix-item">FastAPI</li>
+                        <li class="module__matrix-item">Flask</li>
+                        <li class="module__matrix-item">Redis</li>
+                        <li class="module__matrix-item">Celery</li>
+                        <li class="module__matrix-item">gRPC</li>
+                        <li class="module__matrix-item">GraphQL</li>
+                    </ul>
+                </article>
+
+                <article class="module module--stack">
+                    <div class="module__heading">
+                        <span class="module__icon" aria-hidden="true" data-code="QS"></span>
+                        <div class="module__meta">
+                            <h2 class="module__title">Quality Systems</h2>
+                            <span class="module__subtitle">Integrity safeguards</span>
+                        </div>
+                    </div>
+                    <ul class="module__matrix">
+                        <li class="module__matrix-item">pytest</li>
+                        <li class="module__matrix-item">mypy</li>
+                        <li class="module__matrix-item">flake8</li>
+                        <li class="module__matrix-item">black</li>
+                        <li class="module__matrix-item">Sentry</li>
+                        <li class="module__matrix-item">Prometheus</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
     </main>
 
     <footer class="footer">
