@@ -137,6 +137,15 @@ a {
     color: var(--warning);
 }
 
+.panel__caption {
+    margin: 0;
+    padding: 12px 28px 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--neon-strong);
+}
+
 @keyframes blink {
     0%, 100% {
         opacity: 1;

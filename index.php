@@ -3,6 +3,106 @@ $siteTitle = 'Gromov Systems // Personnel Interface';
 $description = 'Retro-futuristic dossier: profile of Artem Gromov, data engineer.';
 $birthDate = new DateTime('1988-05-01');
 $age = $birthDate->diff(new DateTime())->y;
+
+$storageStats = [
+    'total_rows' => 1188837503002,
+    'total_bytes' => 50466318417242,
+    'total_tables' => 95878,
+    'total_users' => 278,
+    'queries_today' => 6499418,
+    'compressed_bytes' => 50348881864166,
+    'uncompressed_bytes' => 172701582001172,
+];
+
+function formatMetricNumber($value)
+{
+    return number_format((float) $value, 0, '.', ' ');
+}
+
+function formatMetricBytes($bytes)
+{
+    if ($bytes <= 0) {
+        return '0 B';
+    }
+
+    $units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+    $index = 0;
+    $normalized = $bytes;
+
+    while ($normalized >= 1024 && $index < count($units) - 1) {
+        $normalized /= 1024;
+        $index++;
+    }
+
+    $precision = $index === 0 ? 0 : ($normalized < 10 ? 2 : 1);
+
+    return number_format($normalized, $precision, '.', ' ') . ' ' . $units[$index];
+}
+
+function formatCompressionRatio($ratio)
+{
+    if ($ratio <= 0) {
+        return '1.00×';
+    }
+
+    return number_format($ratio, $ratio < 10 ? 2 : 1, '.', ' ') . '×';
+}
+
+function formatPercent($value)
+{
+    return number_format($value, 1, '.', ' ') . '%';
+}
+
+$compressionRatio = $storageStats['uncompressed_bytes'] > 0
+    ? $storageStats['uncompressed_bytes'] / $storageStats['compressed_bytes']
+    : 0;
+
+$compressionSavings = $storageStats['uncompressed_bytes'] > 0
+    ? (1 - ($storageStats['compressed_bytes'] / $storageStats['uncompressed_bytes'])) * 100
+    : 0;
+
+$storageMetrics = [
+    [
+        'label' => 'Total Rows',
+        'value' => formatMetricNumber($storageStats['total_rows']),
+        'hint' => 'Unified records across clusters',
+    ],
+    [
+        'label' => 'Data Volume',
+        'value' => formatMetricBytes($storageStats['total_bytes']),
+        'hint' => formatMetricNumber($storageStats['total_bytes']) . ' bytes indexed',
+    ],
+    [
+        'label' => 'Compressed Footprint',
+        'value' => formatMetricBytes($storageStats['compressed_bytes']),
+        'hint' => 'Active parts on disk',
+    ],
+    [
+        'label' => 'Logical Footprint',
+        'value' => formatMetricBytes($storageStats['uncompressed_bytes']),
+        'hint' => 'Raw columnar expansion',
+    ],
+    [
+        'label' => 'Active Tables',
+        'value' => formatMetricNumber($storageStats['total_tables']),
+        'hint' => 'Operational datasets',
+    ],
+    [
+        'label' => 'Authorized Users',
+        'value' => formatMetricNumber($storageStats['total_users']),
+        'hint' => 'Identities with data access',
+    ],
+    [
+        'label' => 'Queries Today',
+        'value' => formatMetricNumber($storageStats['queries_today']),
+        'hint' => 'Cluster-wide executions',
+    ],
+    [
+        'label' => 'Compression Ratio',
+        'value' => formatCompressionRatio($compressionRatio),
+        'hint' => formatPercent($compressionSavings) . ' space saved',
+    ],
+];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,6 +149,10 @@ $age = $birthDate->diff(new DateTime())->y;
                             <dt>Email:</dt>
                             <dd><a href="mailto:artem@gromov.kz">artem@gromov.kz</a></dd>
                         </div>
+                        <div class="identity__item">
+                            <dt>Telegram:</dt>
+                            <dd><a href="https://t.me/artem_gromov" target="_blank" rel="noopener">t.me/artem_gromov</a></dd>
+                        </div>
                     </dl>
                 </div>
             </div>
@@ -81,6 +185,25 @@ $age = $birthDate->diff(new DateTime())->y;
                     <span class="metric__value" data-role="sync">--.--.---- --:--:--</span>
                     <span class="metric__hint">AUTONOMOUS BACKUP ACTIVE</span>
                 </article>
+            </div>
+        </section>
+
+        <section class="panel panel--storage">
+            <div class="panel__header">
+                <span class="panel__title">STORAGE GRID</span>
+                <span class="panel__status">PROPRIETARY</span>
+            </div>
+            <p class="panel__caption">Data warehouse engineered and maintained by Artem Gromov</p>
+            <div class="metrics metrics--storage">
+                <?php foreach ($storageMetrics as $metric): ?>
+                    <article class="metric">
+                        <span class="metric__label"><?= htmlspecialchars($metric['label'], ENT_QUOTES, 'UTF-8') ?></span>
+                        <span class="metric__value"><?= htmlspecialchars($metric['value'], ENT_QUOTES, 'UTF-8') ?></span>
+                        <?php if (!empty($metric['hint'])): ?>
+                            <span class="metric__hint"><?= htmlspecialchars($metric['hint'], ENT_QUOTES, 'UTF-8') ?></span>
+                        <?php endif; ?>
+                    </article>
+                <?php endforeach; ?>
             </div>
         </section>
 
