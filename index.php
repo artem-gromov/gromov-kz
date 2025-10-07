@@ -33,7 +33,7 @@ $description = 'Личная страница Артема Громова: пр�
                 Планируешь прогулку или встречу? Проверь актуальный прогноз прямо здесь.
             </p>
             <div class="weather-widget" aria-live="polite">
-                <a class="weatherwidget-io" href="https://forecast7.com/en/43d2276d85/almaty/" data-label_1="ALMATY" data-label_2="WEATHER" data-theme="original" >ALMATY WEATHER</a>
+                <a class="weatherwidget-io" href="https://forecast7.com/ru/43d2276d85/almaty/" data-label_1="Алматы" data-theme="original" >Алматы</a>
             </div>
         </section>
 
