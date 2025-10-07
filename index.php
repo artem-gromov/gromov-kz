@@ -14,7 +14,8 @@ $age = $birthDate->diff(new DateTime())->y;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <?php $styleVersion = filemtime(__DIR__ . '/assets/css/style.css'); ?>
+    <link rel="stylesheet" href="/assets/css/style.css?v=<?= $styleVersion ?>">
 </head>
 <body>
 <div class="scanlines" aria-hidden="true"></div>
