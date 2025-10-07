@@ -1,6 +1,6 @@
 <?php
 $siteTitle = 'Gromov Systems // Personnel Interface';
-$description = 'Retro-futuristic dossier system: profile of Artem Gromov, data engineer.';
+$description = 'Retro-futuristic dossier: profile of Artem Gromov, data engineer.';
 $birthDate = new DateTime('1988-05-01');
 $age = $birthDate->diff(new DateTime())->y;
 ?>
@@ -37,16 +37,12 @@ $age = $birthDate->diff(new DateTime())->y;
                     <p class="identity__role">Data Engineer</p>
                     <dl class="identity__list">
                         <div class="identity__item">
-                            <dt>Date of birth</dt>
-                            <dd>01.05.1988 (<?= $age ?>)</dd>
+                            <dt>Age</dt>
+                            <dd><?= $age ?> years</dd>
                         </div>
                         <div class="identity__item">
                             <dt>Home sector</dt>
                             <dd>Almaty, KZ</dd>
-                        </div>
-                        <div class="identity__item">
-                            <dt>UID</dt>
-                            <dd>AG-1988-0501</dd>
                         </div>
                     </dl>
                 </div>
