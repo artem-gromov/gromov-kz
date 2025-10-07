@@ -1,0 +1,131 @@
+:root {
+    color-scheme: light dark;
+    --page-bg: #f5f7fb;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --accent: #2563eb;
+    --shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.25);
+    --border-radius: 24px;
+    --max-width: 960px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: linear-gradient(160deg, #e0f2fe 0%, #f5f7fb 50%, #ede9fe 100%);
+    min-height: 100vh;
+}
+
+.page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 32px 24px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 48px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow);
+}
+
+.hero__title {
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+}
+
+.hero__subtitle {
+    margin: 0;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: var(--text-secondary);
+    max-width: 540px;
+}
+
+.hero__photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 40%;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: 2.5rem;
+    box-shadow: var(--shadow);
+}
+
+.hero__initials {
+    letter-spacing: 0.1em;
+}
+
+.main {
+    display: grid;
+    gap: 32px;
+}
+
+.section {
+    padding: 32px 36px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.section__title {
+    margin: 0 0 12px;
+    font-size: 1.8rem;
+}
+
+.section__intro,
+.section__text {
+    margin: 0 0 16px;
+    color: var(--text-secondary);
+}
+
+.weather-widget {
+    min-height: 120px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.footer__text {
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .page {
+        padding: 24px 16px 40px;
+    }
+
+    .hero {
+        padding: 32px 24px;
+    }
+
+    .section {
+        padding: 24px;
+    }
+}
