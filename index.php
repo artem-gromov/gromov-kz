@@ -33,14 +33,7 @@ $description = 'Личная страница Артема Громова: пр�
                 Планируешь прогулку или встречу? Проверь актуальный прогноз прямо здесь.
             </p>
             <div class="weather-widget" aria-live="polite">
-                <a class="weatherwidget-io"
-                   href="https://forecast7.com/ru/43d24n76d95/almaty/"
-                   data-label_1="Алматы"
-                   data-label_2="Погода"
-                   data-font="Inter"
-                   data-theme="pure">
-                    Алматы Погода
-                </a>
+                <a class="weatherwidget-io" href="https://forecast7.com/en/43d2276d85/almaty/" data-label_1="ALMATY" data-label_2="WEATHER" data-theme="original" >ALMATY WEATHER</a>
             </div>
         </section>
 
@@ -58,20 +51,7 @@ $description = 'Личная страница Артема Громова: пр�
 </div>
 
 <script>
-    (function loadWeatherWidget(doc, scriptId) {
-        const existingScript = doc.getElementById(scriptId);
-        if (existingScript) {
-            return;
-        }
-
-        const script = doc.createElement('script');
-        script.id = scriptId;
-        script.src = 'https://weatherwidget.io/js/widget.min.js';
-        script.async = true;
-
-        const firstScript = doc.getElementsByTagName('script')[0];
-        firstScript.parentNode.insertBefore(script, firstScript);
-    }(document, 'weatherwidget-io-js'));
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
 </body>
 </html>
