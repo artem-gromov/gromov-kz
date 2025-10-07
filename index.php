@@ -44,6 +44,10 @@ $age = $birthDate->diff(new DateTime())->y;
                             <dt>Home sector</dt>
                             <dd>Almaty, KZ</dd>
                         </div>
+                        <div class="identity__item">
+                            <dt>Email</dt>
+                            <dd><a href="mailto:artem@gromov.kz">artem@gromov.kz</a></dd>
+                        </div>
                     </dl>
                 </div>
             </div>
