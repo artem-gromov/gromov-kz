@@ -1,6 +1,6 @@
 <?php
-$siteTitle = 'Gromov Systems // Personnel Interface';
-$description = 'Retro-futuristic dossier: profile of Artem Gromov, data engineer.';
+$siteTitle = 'Gromov Nexus // Character Console';
+$description = 'Retro-futuristic operator profile for Artem Gromov, warehouse architect and signal engineer.';
 $birthDate = new DateTime('1988-05-01');
 $age = $birthDate->diff(new DateTime())->y;
 
@@ -63,44 +63,198 @@ $compressionSavings = $storageStats['uncompressed_bytes'] > 0
 
 $storageMetrics = [
     [
-        'label' => 'Total Rows',
+        'label' => 'Row Archive',
         'value' => formatMetricNumber($storageStats['total_rows']),
-        'hint' => 'Unified records across clusters',
+        'hint' => 'Indexed records across constellations',
     ],
     [
-        'label' => 'Data Volume',
+        'label' => 'Data Mass',
         'value' => formatMetricBytes($storageStats['total_bytes']),
-        'hint' => formatMetricNumber($storageStats['total_bytes']) . ' bytes indexed',
+        'hint' => formatMetricNumber($storageStats['total_bytes']) . ' bytes under command',
     ],
     [
         'label' => 'Compressed Footprint',
         'value' => formatMetricBytes($storageStats['compressed_bytes']),
-        'hint' => 'Active parts on disk',
+        'hint' => 'Active shards on cold storage',
     ],
     [
         'label' => 'Logical Footprint',
         'value' => formatMetricBytes($storageStats['uncompressed_bytes']),
-        'hint' => 'Raw columnar expansion',
+        'hint' => 'Raw expansion when inflated',
     ],
     [
         'label' => 'Active Tables',
         'value' => formatMetricNumber($storageStats['total_tables']),
-        'hint' => 'Operational datasets',
+        'hint' => 'Datasets linked into the grid',
     ],
     [
         'label' => 'Authorized Users',
         'value' => formatMetricNumber($storageStats['total_users']),
-        'hint' => 'Identities with data access',
+        'hint' => 'Identities with access tokens',
     ],
     [
-        'label' => 'Queries Today',
+        'label' => 'Query Throughput',
         'value' => formatMetricNumber($storageStats['queries_today']),
-        'hint' => 'Cluster-wide executions',
+        'hint' => 'Executions processed this cycle',
     ],
     [
-        'label' => 'Compression Ratio',
+        'label' => 'Compression Delta',
         'value' => formatCompressionRatio($compressionRatio),
-        'hint' => formatPercent($compressionSavings) . ' space saved',
+        'hint' => formatPercent($compressionSavings) . ' capacity reclaimed',
+    ],
+];
+
+$heroAttributes = [
+    [
+        'label' => 'Division',
+        'value' => 'Dataway Vanguard',
+    ],
+    [
+        'label' => 'Designation',
+        'value' => 'Signal Architect',
+    ],
+    [
+        'label' => 'Experience',
+        'value' => $age . ' cycles in field',
+    ],
+    [
+        'label' => 'Operating Zone',
+        'value' => 'Almaty Megalopolis, KZ',
+    ],
+    [
+        'label' => 'Clearance',
+        'value' => 'Level 4 - Green',
+    ],
+    [
+        'label' => 'Specialization',
+        'value' => 'Warehouse automation & real-time analytics',
+    ],
+];
+
+$heroContacts = [
+    [
+        'label' => 'Comms Port',
+        'value' => '<a href="mailto:artem@gromov.kz">artem@gromov.kz</a>',
+        'is_html' => true,
+    ],
+    [
+        'label' => 'Signal Uplink',
+        'value' => '<a href="https://t.me/artem_gromov" target="_blank" rel="noopener">t.me/artem_gromov</a>',
+        'is_html' => true,
+    ],
+    [
+        'label' => 'Operative ID',
+        'value' => 'AG-1988-DS',
+    ],
+];
+
+$heroMeters = [
+    [
+        'label' => 'XP Buffer',
+        'value' => 86,
+        'hint' => 'Next upgrade at 90%',
+    ],
+    [
+        'label' => 'Focus Charge',
+        'value' => 72,
+        'hint' => 'Maintained via deep work cycles',
+    ],
+    [
+        'label' => 'System Load',
+        'value' => 44,
+        'hint' => 'Resources free for new missions',
+    ],
+    [
+        'label' => 'Reboot Ready',
+        'value' => 95,
+        'hint' => 'Recovery pipelines hardened',
+    ],
+];
+
+$achievements = [
+    [
+        'title' => 'Vault Architect Sigma',
+        'tier' => 'S',
+        'status' => 'Cleared 2044-06',
+        'description' => 'Scaled the warehouse complex to 1.8 PB with zero downtime.',
+    ],
+    [
+        'title' => 'Latency Whisperer',
+        'tier' => 'A',
+        'status' => 'Cleared 2043-11',
+        'description' => 'Stabilized sub-second analytics across three business clusters.',
+    ],
+    [
+        'title' => 'Resurrection Protocol',
+        'tier' => 'A',
+        'status' => 'Cleared 2042-04',
+        'description' => 'Recovered a corrupted production shard overnight with bespoke restore flows.',
+    ],
+    [
+        'title' => 'Assimilator',
+        'tier' => 'B',
+        'status' => 'Tracking',
+        'description' => 'Unified 27 data sources into one ClickHouse spine inside a single quarter.',
+    ],
+];
+
+$missions = [
+    [
+        'title' => 'Chronicle Sync',
+        'status' => 'Running',
+        'brief' => 'Re-platform legacy ingestion jobs into the streaming mesh.',
+        'eta' => 'ETA: 3d 14h',
+    ],
+    [
+        'title' => 'Echo Shield',
+        'status' => 'Queued',
+        'brief' => 'Design anomaly guardrails for nightly loads.',
+        'eta' => 'ETA: 6d 02h',
+    ],
+    [
+        'title' => 'Shard Uplift',
+        'status' => 'Completed',
+        'brief' => 'Migrated core metrics to a generational visualization stack.',
+        'eta' => 'Logged: 2044-02-18',
+    ],
+];
+
+$skillClusters = [
+    [
+        'code' => 'CORE',
+        'title' => 'Core Protocols',
+        'subtitle' => 'Languages compiled into muscle memory',
+        'items' => ['Python', 'SQL', 'Go', 'Bash'],
+    ],
+    [
+        'code' => 'PIPE',
+        'title' => 'Pipeline Forge',
+        'subtitle' => 'Movement, modeling, and orchestration',
+        'items' => ['Airflow', 'dbt', 'Kafka', 'ClickHouse', 'PostgreSQL'],
+    ],
+    [
+        'code' => 'OPS',
+        'title' => 'Ops Shell',
+        'subtitle' => 'Deployment and observability toolchain',
+        'items' => ['Docker', 'Kubernetes', 'GitHub Actions', 'Linux', 'Prometheus', 'Sentry'],
+    ],
+    [
+        'code' => 'API',
+        'title' => 'Interface Layer',
+        'subtitle' => 'Backends, services, and distributed glue',
+        'items' => ['FastAPI', 'Flask', 'Redis', 'Celery', 'gRPC', 'GraphQL'],
+    ],
+    [
+        'code' => 'VIS',
+        'title' => 'Signal Viz',
+        'subtitle' => 'Analytics and exploration surfaces',
+        'items' => ['Metabase', 'Superset', 'Grafana', 'Plotly', 'Matplotlib', 'Jupyter'],
+    ],
+    [
+        'code' => 'QA',
+        'title' => 'Quality Core',
+        'subtitle' => 'Validation and resilience suites',
+        'items' => ['pytest', 'mypy', 'flake8', 'black'],
     ],
 ];
 ?>
@@ -121,80 +275,113 @@ $storageMetrics = [
 <div class="scanlines" aria-hidden="true"></div>
 <div class="haze" aria-hidden="true"></div>
 <div class="page">
+    <header class="hud">
+        <div class="hud__channel">
+            <span class="hud__label">channel</span>
+            <span class="hud__value">nexus-03 // character console</span>
+        </div>
+        <div class="hud__status">
+            <span class="hud__label">status</span>
+            <span class="hud__value">online // build <?= date('Y') ?>.<?= date('m') ?></span>
+        </div>
+    </header>
 
-    <main class="terminal">
-        <section class="panel panel--identity">
+    <main class="interface">
+        <section class="panel panel--hero">
             <div class="panel__header">
-                <span class="panel__title">PERSONNEL DOSSIER</span>
-                <span class="panel__status">ONLINE</span>
+                <span class="panel__title">CHARACTER SHELL</span>
+                <span class="panel__status panel__status--blink">ACTIVE</span>
             </div>
-            <div class="identity">
-                <div class="identity__photo">
+            <div class="hero">
+                <div class="hero__portrait">
                     <img src="https://i.pravatar.cc/420?u=artem.gromov" alt="Portrait of Artem Gromov">
-                    <span class="identity__photo-frame" aria-hidden="true"></span>
+                    <span class="hero__marker">AG-2044</span>
                 </div>
-                <div class="identity__meta">
-                    <h1 class="identity__name">Artem Gromov</h1>
-                    <p class="identity__role">Data Engineer</p>
-                    <dl class="identity__list">
-                        <div class="identity__item">
-                            <dt>Age:</dt>
-                            <dd><?= $age ?> years</dd>
-                        </div>
-                        <div class="identity__item">
-                            <dt>Home sector:</dt>
-                            <dd>Almaty, KZ</dd>
-                        </div>
-                        <div class="identity__item">
-                            <dt>Email:</dt>
-                            <dd><a href="mailto:artem@gromov.kz">artem@gromov.kz</a></dd>
-                        </div>
-                        <div class="identity__item">
-                            <dt>Telegram:</dt>
-                            <dd><a href="https://t.me/artem_gromov" target="_blank" rel="noopener">t.me/artem_gromov</a></dd>
-                        </div>
+                <div class="hero__meta">
+                    <div class="hero__callout">
+                        <h1 class="hero__name">Artem Gromov</h1>
+                        <p class="hero__alias">Codename: Signal Forge</p>
+                        <p class="hero__tagline">Data engineer. Warehouse orchestrator. Retro-future native.</p>
+                    </div>
+                    <dl class="hero__grid">
+                        <?php foreach ($heroAttributes as $stat): ?>
+                            <div class="hero__stat">
+                                <dt><?= htmlspecialchars($stat['label'], ENT_QUOTES, 'UTF-8') ?>:</dt>
+                                <dd><?= htmlspecialchars($stat['value'], ENT_QUOTES, 'UTF-8') ?></dd>
+                            </div>
+                        <?php endforeach; ?>
                     </dl>
+                    <dl class="hero__grid hero__grid--compact">
+                        <?php foreach ($heroContacts as $stat): ?>
+                            <div class="hero__stat">
+                                <dt><?= htmlspecialchars($stat['label'], ENT_QUOTES, 'UTF-8') ?>:</dt>
+                                <dd>
+                                    <?php if (!empty($stat['is_html'])): ?>
+                                        <?= $stat['value'] ?>
+                                    <?php else: ?>
+                                        <?= htmlspecialchars($stat['value'], ENT_QUOTES, 'UTF-8') ?>
+                                    <?php endif; ?>
+                                </dd>
+                            </div>
+                        <?php endforeach; ?>
+                    </dl>
+                    <div class="hero__meters">
+                        <?php foreach ($heroMeters as $meter): ?>
+                            <div class="meter">
+                                <div class="meter__header">
+                                    <span class="meter__label"><?= htmlspecialchars($meter['label'], ENT_QUOTES, 'UTF-8') ?></span>
+                                    <span class="meter__hint"><?= htmlspecialchars($meter['hint'], ENT_QUOTES, 'UTF-8') ?></span>
+                                </div>
+                                <div class="meter__bar">
+                                    <span class="meter__fill" style="width: <?= (int) $meter['value'] ?>%;"></span>
+                                    <span class="meter__value"><?= (int) $meter['value'] ?>%</span>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="panel panel--metrics">
+        <section class="panel panel--vitals">
             <div class="panel__header">
-                <span class="panel__title">VITAL METRICS</span>
-                <span class="panel__status panel__status--pulse">STABLE</span>
+                <span class="panel__title">HUD STREAM</span>
+                <span class="panel__status panel__status--pulse">STABLE SIGNAL</span>
             </div>
-            <div class="metrics">
+            <div class="metrics metrics--vitals">
                 <article class="metric metric--pulse">
-                    <span class="metric__label">Pulse</span>
+                    <span class="metric__label">Bio pulse</span>
                     <div class="pulse">
                         <span class="pulse__value" data-role="pulse-value">-- bpm</span>
-                        <span class="pulse__heart" aria-hidden="true">❤</span>
+                        <span class="pulse__heart" aria-hidden="true">&#10084;</span>
                     </div>
+                    <span class="metric__hint">Autonomous sensors calibrated</span>
                 </article>
                 <article class="metric">
-                    <span class="metric__label">Location</span>
+                    <span class="metric__label">Signal lock</span>
                     <span class="metric__value" data-role="coordinates">43.2389° N, 76.8897° E</span>
+                    <span class="metric__hint">Drift compensated in real time</span>
                 </article>
                 <article class="metric metric--temp">
-                    <span class="metric__label">Outside temp</span>
+                    <span class="metric__label">External temp</span>
                     <span class="metric__value" data-role="temperature">-- °C</span>
-                    <span class="metric__hint" data-role="temperature-updated">Fetching...</span>
+                    <span class="metric__hint" data-role="temperature-updated">Awaiting feed...</span>
                 </article>
                 <article class="metric">
-                    <span class="metric__label">Last sync</span>
+                    <span class="metric__label">Galactic sync</span>
                     <span class="metric__value" data-role="sync">--.--.---- --:--:--</span>
-                    <span class="metric__hint">AUTONOMOUS BACKUP ACTIVE</span>
+                    <span class="metric__hint">Chronometer steady</span>
                 </article>
             </div>
         </section>
 
-        <section class="panel panel--storage">
+        <section class="panel panel--vault">
             <div class="panel__header">
-                <span class="panel__title">STORAGE GRID</span>
+                <span class="panel__title">DATA VAULT</span>
                 <span class="panel__status">PROPRIETARY</span>
             </div>
-            <p class="panel__caption">Data warehouse engineered and maintained by Artem Gromov</p>
-            <div class="metrics metrics--storage">
+            <p class="panel__caption">Warehouse core engineered and maintained by Artem Gromov</p>
+            <div class="metrics metrics--vault">
                 <?php foreach ($storageMetrics as $metric): ?>
                     <article class="metric">
                         <span class="metric__label"><?= htmlspecialchars($metric['label'], ENT_QUOTES, 'UTF-8') ?></span>
@@ -207,125 +394,76 @@ $storageMetrics = [
             </div>
         </section>
 
-        <section class="panel panel--stack">
+        <section class="panel panel--skills">
             <div class="panel__header">
-                <span class="panel__title">TECHNOLOGY MATRIX</span>
+                <span class="panel__title">SKILL TREE</span>
                 <span class="panel__status panel__status--blink">VERIFIED</span>
             </div>
-            <div class="modules modules--stack">
-                <article class="module module--stack">
-                    <div class="module__heading">
-                        <span class="module__icon" aria-hidden="true" data-code="PL"></span>
-                        <div class="module__meta">
-                            <h2 class="module__title">Programming Languages</h2>
-                            <span class="module__subtitle">Cognitive routines engaged</span>
+            <div class="modules">
+                <?php foreach ($skillClusters as $cluster): ?>
+                    <article class="module">
+                        <div class="module__heading">
+                            <span class="module__icon" aria-hidden="true" data-code="<?= htmlspecialchars($cluster['code'], ENT_QUOTES, 'UTF-8') ?>"></span>
+                            <div class="module__meta">
+                                <h2 class="module__title"><?= htmlspecialchars($cluster['title'], ENT_QUOTES, 'UTF-8') ?></h2>
+                                <span class="module__subtitle"><?= htmlspecialchars($cluster['subtitle'], ENT_QUOTES, 'UTF-8') ?></span>
+                            </div>
                         </div>
-                    </div>
-                    <ul class="module__matrix">
-                        <li class="module__matrix-item">Python</li>
-                        <li class="module__matrix-item">SQL</li>
-                        <li class="module__matrix-item">Bash</li>
-                        <li class="module__matrix-item">Go</li>
-                    </ul>
-                </article>
-
-                <article class="module module--stack">
-                    <div class="module__heading">
-                        <span class="module__icon" aria-hidden="true" data-code="DE"></span>
-                        <div class="module__meta">
-                            <h2 class="module__title">Data Engineering</h2>
-                            <span class="module__subtitle">Pipelines and orchestration</span>
-                        </div>
-                    </div>
-                    <ul class="module__matrix">
-                        <li class="module__matrix-item">Airflow</li>
-                        <li class="module__matrix-item">dbt</li>
-                        <li class="module__matrix-item">Kafka</li>
-                        <li class="module__matrix-item">ClickHouse</li>
-                        <li class="module__matrix-item">PostgreSQL</li>
-                    </ul>
-                </article>
-
-                <article class="module module--stack">
-                    <div class="module__heading">
-                        <span class="module__icon" aria-hidden="true" data-code="IO"></span>
-                        <div class="module__meta">
-                            <h2 class="module__title">Infrastructure Ops</h2>
-                            <span class="module__subtitle">Deployment and control</span>
-                        </div>
-                    </div>
-                    <ul class="module__matrix">
-                        <li class="module__matrix-item">Docker</li>
-                        <li class="module__matrix-item">Kubernetes</li>
-                        <li class="module__matrix-item">GitHub Actions</li>
-                        <li class="module__matrix-item">Linux</li>
-                    </ul>
-                </article>
-
-                <article class="module module--stack">
-                    <div class="module__heading">
-                        <span class="module__icon" aria-hidden="true" data-code="AV"></span>
-                        <div class="module__meta">
-                            <h2 class="module__title">Analytics &amp; Viz</h2>
-                            <span class="module__subtitle">Situational awareness</span>
-                        </div>
-                    </div>
-                    <ul class="module__matrix">
-                        <li class="module__matrix-item">Metabase</li>
-                        <li class="module__matrix-item">Superset</li>
-                        <li class="module__matrix-item">Grafana</li>
-                        <li class="module__matrix-item">Plotly</li>
-                        <li class="module__matrix-item">Matplotlib</li>
-                        <li class="module__matrix-item">Jupyter</li>
-                    </ul>
-                </article>
-
-                <article class="module module--stack">
-                    <div class="module__heading">
-                        <span class="module__icon" aria-hidden="true" data-code="BA"></span>
-                        <div class="module__meta">
-                            <h2 class="module__title">Backend / API</h2>
-                            <span class="module__subtitle">Service interfaces</span>
-                        </div>
-                    </div>
-                    <ul class="module__matrix">
-                        <li class="module__matrix-item">FastAPI</li>
-                        <li class="module__matrix-item">Flask</li>
-                        <li class="module__matrix-item">Redis</li>
-                        <li class="module__matrix-item">Celery</li>
-                        <li class="module__matrix-item">gRPC</li>
-                        <li class="module__matrix-item">GraphQL</li>
-                    </ul>
-                </article>
-
-                <article class="module module--stack">
-                    <div class="module__heading">
-                        <span class="module__icon" aria-hidden="true" data-code="QS"></span>
-                        <div class="module__meta">
-                            <h2 class="module__title">Quality Systems</h2>
-                            <span class="module__subtitle">Integrity safeguards</span>
-                        </div>
-                    </div>
-                    <ul class="module__matrix">
-                        <li class="module__matrix-item">pytest</li>
-                        <li class="module__matrix-item">mypy</li>
-                        <li class="module__matrix-item">flake8</li>
-                        <li class="module__matrix-item">black</li>
-                        <li class="module__matrix-item">Sentry</li>
-                        <li class="module__matrix-item">Prometheus</li>
-                    </ul>
-                </article>
+                        <ul class="module__matrix">
+                            <?php foreach ($cluster['items'] as $item): ?>
+                                <li class="module__matrix-item"><?= htmlspecialchars($item, ENT_QUOTES, 'UTF-8') ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </article>
+                <?php endforeach; ?>
             </div>
         </section>
 
+        <section class="panel panel--achievements">
+            <div class="panel__header">
+                <span class="panel__title">ACHIEVEMENT LOG</span>
+                <span class="panel__status">ARCHIVED</span>
+            </div>
+            <div class="achievements">
+                <?php foreach ($achievements as $achievement): ?>
+                    <article class="achievement">
+                        <div class="achievement__grade"><?= htmlspecialchars($achievement['tier'], ENT_QUOTES, 'UTF-8') ?></div>
+                        <div class="achievement__body">
+                            <h3 class="achievement__title"><?= htmlspecialchars($achievement['title'], ENT_QUOTES, 'UTF-8') ?></h3>
+                            <p class="achievement__status"><?= htmlspecialchars($achievement['status'], ENT_QUOTES, 'UTF-8') ?></p>
+                            <p class="achievement__desc"><?= htmlspecialchars($achievement['description'], ENT_QUOTES, 'UTF-8') ?></p>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        </section>
+
+        <section class="panel panel--missions">
+            <div class="panel__header">
+                <span class="panel__title">MISSION FEED</span>
+                <span class="panel__status panel__status--pulse">UPDATED</span>
+            </div>
+            <div class="missions">
+                <?php foreach ($missions as $mission): ?>
+                    <article class="mission">
+                        <div class="mission__status"><?= htmlspecialchars($mission['status'], ENT_QUOTES, 'UTF-8') ?></div>
+                        <div class="mission__body">
+                            <h3 class="mission__title"><?= htmlspecialchars($mission['title'], ENT_QUOTES, 'UTF-8') ?></h3>
+                            <p class="mission__brief"><?= htmlspecialchars($mission['brief'], ENT_QUOTES, 'UTF-8') ?></p>
+                        </div>
+                        <span class="mission__eta"><?= htmlspecialchars($mission['eta'], ENT_QUOTES, 'UTF-8') ?></span>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="footer__channel">
-            <span>CHANNEL</span>
-            <span>RETRO-FUTURE / CYBERNETICS</span>
+            <span>channel</span>
+            <span>retro-future // signal forge</span>
         </div>
-        <div class="footer__copyright">© <?= date('Y') ?> Artem Gromov. Observation mode engaged.</div>
+        <div class="footer__copyright">© <?= date('Y') ?> Artem Gromov. Console rendered in real time.</div>
     </footer>
 </div>
 
@@ -363,7 +501,7 @@ $storageMetrics = [
             if (!pulseEl) {
                 return;
             }
-            const bpm = Math.floor(72 + Math.random() * 10);
+            const bpm = Math.floor(68 + Math.random() * 14);
             pulseEl.textContent = `${bpm} bpm`;
         }
 
@@ -372,7 +510,7 @@ $storageMetrics = [
                 return;
             }
             try {
-                temperatureUpdatedEl.textContent = 'Fetching...';
+                temperatureUpdatedEl.textContent = 'Awaiting feed...';
                 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=43.2389&longitude=76.8897&current=temperature_2m&timezone=auto');
                 if (!response.ok) {
                     throw new Error('Request failed');
@@ -384,14 +522,12 @@ $storageMetrics = [
                 }
                 temperatureEl.textContent = `${Math.round(temperature)} °C`;
                 const timeStamp = data?.current?.time ? new Date(data.current.time) : new Date();
-                temperatureUpdatedEl.textContent = `Updated ${pad(timeStamp.getHours())}:${pad(timeStamp.getMinutes())}`;
+                temperatureUpdatedEl.textContent = `Sync ${pad(timeStamp.getHours())}:${pad(timeStamp.getMinutes())}`;
             } catch (error) {
                 temperatureEl.textContent = '-- °C';
-                temperatureUpdatedEl.textContent = 'Update failed';
+                temperatureUpdatedEl.textContent = 'Signal interrupted';
             }
         }
-
-
 
         updateSyncTimestamp();
         updateCoordinates();
