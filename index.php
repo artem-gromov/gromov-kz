@@ -200,7 +200,6 @@ function formatBytesToTB(?float $bytes): string
         "@type": "Person",
         "name": "Artem Gromov",
         "jobTitle": "Data Engineer",
-        "birthDate": "1988-05-01",
         "email": "mailto:<?= htmlspecialchars($emailLocalPart, ENT_QUOTES) ?>@<?= htmlspecialchars($emailDomain, ENT_QUOTES) ?>",
         "sameAs": [
             "https://t.me/artem_gromov"
