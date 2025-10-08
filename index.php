@@ -37,7 +37,7 @@ $skillsGroups = [
         'title' => 'Programming & Automation',
         'icon' => '⌨️',
         'items' => [
-            'Python (Typer, argparse, dataclasses, logging, cProfile, mypy, ruff, black, sqlfluff)',
+            'Python',
             'Go (Golang)',
             'Bash scripting',
             'YAML-based configuration',
@@ -58,7 +58,6 @@ $skillsGroups = [
             'Teleport',
             'Linux (SSH, networking, automation)',
             'Prometheus monitoring',
-            'Environment management (pipx, pyenv, uv, venv)',
         ],
     ],
     [
@@ -66,7 +65,7 @@ $skillsGroups = [
         'icon' => '🖥',
         'items' => [
             'Power BI',
-            'Data documentation generation (Markdown → Confluence)',
+            'Data documentation generation',
             'Automated report generation (PDF, Wiki)',
         ],
     ],
@@ -226,22 +225,6 @@ function formatBytesToTB(?float $bytes): string
     <main id="main" class="main-content" role="main">
         <?php include __DIR__ . '/partials/skills.php'; ?>
         <?php include __DIR__ . '/partials/metrics.php'; ?>
-        <section class="panel optional-panels" aria-labelledby="optional-sections-title">
-            <div class="panel-header">
-                <h2 id="optional-sections-title" class="panel-title">> Transmission Buffer</h2>
-                <span class="caret" aria-hidden="true"></span>
-            </div>
-            <div class="panel-body optional-grid">
-                <?php foreach ($optionalSections as $sectionTitle => $placeholder): ?>
-                    <article class="optional-card">
-                        <header>
-                            <h3><?= htmlspecialchars($sectionTitle, ENT_QUOTES) ?></h3>
-                        </header>
-                        <p><?= htmlspecialchars($placeholder, ENT_QUOTES) ?></p>
-                    </article>
-                <?php endforeach; ?>
-            </div>
-        </section>
     </main>
     <?php include __DIR__ . '/partials/footer.php'; ?>
 </div>

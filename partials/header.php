@@ -17,7 +17,7 @@
             <figcaption class="sr-only">Temporary avatar placeholder</figcaption>
         </figure>
         <div class="identity">
-            <p class="identity-title">Data Engineer · Live age: <span id="liveAge"><?= htmlspecialchars((string) $age, ENT_QUOTES) ?></span></p>
+            <p class="identity-title">Data Engineer · Age: <span id="liveAge"><?= htmlspecialchars((string) $age, ENT_QUOTES) ?></span></p>
             <p class="identity-subtitle">Designing durable data platforms, resilient pipelines, and operational visibility for analytical decision-making.</p>
             <div class="contact-grid" aria-label="Contact actions">
                 <div class="contact-item">
@@ -52,7 +52,7 @@
         <div class="status-panel" role="status">
             <div class="status-line">
                 <span class="status-label">Location</span>
-                <span class="status-value">Remote · Europe/Riga</span>
+                <span class="status-value">Remote · Kazakhstan/Almaty</span>
             </div>
             <div class="status-line">
                 <span class="status-label">Current Focus</span>
