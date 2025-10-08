@@ -7,9 +7,6 @@
 <header class="site-header panel" role="banner">
     <div class="panel-header">
         <h1 class="site-title">> Artem Gromov<span class="caret" aria-hidden="true"></span></h1>
-        <button type="button" class="effect-toggle" id="effectToggle" aria-pressed="false" aria-label="Toggle CRT effects">
-            Reduce CRT effects
-        </button>
     </div>
     <div class="panel-body header-body">
         <figure class="avatar-frame">
@@ -18,7 +15,7 @@
         </figure>
         <div class="identity">
             <p class="identity-title">Data Engineer · Age: <span id="liveAge"><?= htmlspecialchars((string) $age, ENT_QUOTES) ?></span></p>
-            <p class="identity-subtitle">Designing durable data platforms, resilient pipelines, and operational visibility for analytical decision-making.</p>
+            <p class="identity-subtitle">Developing and maintaining distributed data warehouses, resilient pipelines, and operational visibility for analytical decision-making.</p>
             <div class="contact-grid" aria-label="Contact actions">
                 <div class="contact-item">
                     <span class="contact-label">Email</span>

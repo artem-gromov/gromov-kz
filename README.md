@@ -22,7 +22,7 @@ Single-page CRT-inspired CV for Artem Gromov. Built with PHP 8+, vanilla CSS, an
 │   ├── ArtemGromov.vcf
 │   ├── css/style.css
 │   ├── img/
-│   │   ├── avatar-temp.jpg
+│   │   ├── 420.jpeg
 │   │   └── favicon.png
 │   └── js/app.js
 ├── data/
@@ -52,7 +52,7 @@ No build steps or additional tooling is required. To keep everything self-contai
 - **Skills**: Update the `$skillsGroups` array in `index.php`.
 - **Optional sections**: Adjust the `$optionalSections` array to change placeholder copy or replace them with real content.
 - **Contact info**: Look for `$emailLocalPart`, `$emailDomain`, and the Telegram URL in `index.php`.
-- **Avatar**: Replace `assets/img/avatar-temp.jpg` with a 420×420 JPG (keep the filename to avoid further changes).
+- **Avatar**: Replace `assets/img/420.jpeg` with a 420×420 JPG (keep the filename to avoid further changes).
 - **Theme tweaks**: Modify color tokens in `assets/css/style.css` (`:root` variables) or extend the CRT effects.
 - **vCard**: Update `assets/ArtemGromov.vcf` to keep contact details in sync.
 
@@ -73,7 +73,7 @@ The “Print / Save PDF” buttons call `window.print()`. A dedicated `@media pr
 ## Accessibility, Performance & Motion Preferences
 
 - Semantic landmarks (`header`, `main`, `footer`) and a skip link support keyboard navigation.
-- Prefers-reduced-motion automatically disables scanlines, noise, and caret animations; users can also toggle effects manually via the “Reduce CRT effects” button.
+- Prefers-reduced-motion automatically disables scanlines, noise, and caret animations.
 - All assets are local to keep the page offline-friendly.
 
 ## Updating Content Safely

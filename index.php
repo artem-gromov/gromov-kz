@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-$timezone = new DateTimeZone('Europe/Riga');
+$timezone = new DateTimeZone('Asia/Almaty');
 $birthDate = new DateTimeImmutable('1988-05-01', $timezone);
 $today = new DateTimeImmutable('now', $timezone);
 $age = $today->diff($birthDate)->y;
@@ -181,13 +181,13 @@ function formatBytesToTB(?float $bytes): string
     <meta property="og:type" content="profile">
     <meta property="og:title" content="Artem Gromov — Data Engineer">
     <meta property="og:description" content="Retro-futuristic CV for Artem Gromov. Data engineering, distributed systems, analytics leadership.">
-    <meta property="og:image" content="assets/img/avatar-temp.jpg">
+    <meta property="og:image" content="assets/img/420.jpeg">
     <meta property="og:url" content="https://gromov.kz/">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Artem Gromov — Data Engineer">
     <meta name="twitter:description" content="Retro-futuristic CV for Artem Gromov. Data engineering, distributed systems, analytics leadership.">
-    <meta name="twitter:image" content="assets/img/avatar-temp.jpg">
+    <meta name="twitter:image" content="assets/img/420.jpeg">
 
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
