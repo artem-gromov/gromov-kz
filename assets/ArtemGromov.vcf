@@ -1,0 +1,8 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Artem Gromov
+N:Gromov;Artem;;;
+TITLE:Data Engineer
+EMAIL;TYPE=INTERNET:artem@gromov.kz
+X-SOCIALPROFILE;TYPE=telegram:https://t.me/artem_gromov
+END:VCARD

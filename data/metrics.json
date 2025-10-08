@@ -1,0 +1,9 @@
+[
+  {
+    "date": "2025-10-08",
+    "queries_executed": 7828901721,
+    "total_disk_usage_bytes": 25337180487461,
+    "total_data_uncompressed_bytes": 86533439724831,
+    "total_rows_count": 586636725304
+  }
+]
