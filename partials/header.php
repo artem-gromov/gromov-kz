@@ -9,7 +9,7 @@
         <h1 class="site-title">> Artem Gromov<span class="caret" aria-hidden="true"></span></h1>
     </div>
     <div class="panel-body header-body">
-        <figure class="avatar-frame">
+        <figure class="avatar-frame identity__photo">
             <img src="assets/img/420.jpeg" alt="Portrait of Artem Gromov" width="210" height="210" loading="lazy">
             <figcaption class="sr-only">Temporary avatar placeholder</figcaption>
         </figure>

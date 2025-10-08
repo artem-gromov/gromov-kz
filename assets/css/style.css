@@ -1,4 +1,4 @@
-:root{--color-bg:#050d06;--color-panel:#0b1d0f;--color-border:#1f3b22;--color-primary:#47ff7a;--color-accent:#ffc447;--color-text:#c9ffd9;--color-subtle:#84c39b;--color-danger:#ff6f6f;--font-body:'Courier New',monospace;--transition-speed:350ms;--scanline-color:rgba(71,255,122,0.07);--noise-opacity:0.12}
+:root{--color-bg:#050d06;--color-panel:#0b1d0f;--color-border:#1f3b22;--color-primary:#47ff7a;--color-accent:#ffc447;--color-text:#c9ffd9;--color-subtle:#84c39b;--color-danger:#ff6f6f;--font-body:'Courier New',monospace;--transition-speed:350ms;--scanline-color:rgba(71,255,122,0.07);--noise-opacity:0.12;--border-strong:rgba(71,255,122,0.55);--glow:0 0 24px rgba(71,255,122,0.28)}
 *{box-sizing:border-box}
 html,body{height:100%}
 body{margin:0;font-family:var(--font-body);background:radial-gradient(circle at 20% 20%,rgba(71,255,122,0.06),transparent 55%),#020502;color:var(--color-text);line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:.01em}
@@ -16,9 +16,9 @@ body{margin:0;font-family:var(--font-body);background:radial-gradient(circle at 
 .panel-body{display:flex;flex-direction:column;gap:1.5rem}
 .site-header .panel-body{gap:1.5rem}
 .header-body{display:grid;grid-template-columns:minmax(140px,220px) 1fr;gap:1.5rem}
-.avatar-frame{position:relative;overflow:hidden;margin:0;padding:1rem;border-radius:14px;background:rgba(10,38,18,0.8);border:1px solid rgba(71,255,122,0.3);box-shadow:0 0 10px rgba(71,255,122,0.2);display:flex;justify-content:center}
-.avatar-frame::after{content:"";position:absolute;inset:1rem;border-radius:10px;background:linear-gradient(135deg,rgba(10,255,160,0.25),rgba(8,40,20,0.1));mix-blend-mode:screen;pointer-events:none}
-.avatar-frame img{position:relative;border-radius:12px;filter:contrast(1.25) saturate(1.4) sepia(0.25) hue-rotate(90deg) brightness(0.95);width:100%;height:auto;object-fit:cover}
+.avatar-frame{margin:0}
+.identity__photo{position:relative;width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,rgba(4,32,20,0.85),rgba(12,68,38,0.9));border:1px solid var(--border-strong);box-shadow:var(--glow);overflow:hidden;border-radius:14px}
+.identity__photo img{width:100%;height:100%;object-fit:cover;filter:saturate(0.2) contrast(1.25);mix-blend-mode:lighten}
 .identity-title{margin:0;font-size:1.1rem;color:var(--color-primary)}
 .identity-subtitle{margin:0;color:var(--color-subtle);max-width:46ch}
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem}
