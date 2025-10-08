@@ -159,7 +159,9 @@ function formatNumber(?float $value): string
         return 'N/A';
     }
 
-    return number_format($value, 0, '.', ',');
+    $formatted = number_format($value, 0, ',', ' ');
+
+    return str_replace(' ', "\u{00A0}", $formatted);
 }
 
 function formatBytesToTB(?float $bytes): string
@@ -170,7 +172,10 @@ function formatBytesToTB(?float $bytes): string
 
     $tb = $bytes / 1_000_000_000_000;
 
-    return number_format($tb, 2, '.', ',') . ' TB';
+    $formatted = number_format($tb, 2, ',', ' ');
+    $formatted = str_replace(' ', "\u{00A0}", $formatted);
+
+    return $formatted . "\u{00A0}TB";
 }
 ?>
 <!DOCTYPE html>

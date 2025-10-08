@@ -1,5 +1,12 @@
 <?php
 /** @var array|null $metricsLatest */
+
+$queriesValue = is_array($metricsLatest) && isset($metricsLatest['queries_executed'])
+    ? (float) $metricsLatest['queries_executed']
+    : null;
+$rowsValue = is_array($metricsLatest) && isset($metricsLatest['total_rows_count'])
+    ? (float) $metricsLatest['total_rows_count']
+    : null;
 ?>
 <section class="panel metrics-panel" aria-labelledby="metrics-title">
     <div class="panel-header">
@@ -10,7 +17,12 @@
         <div class="metrics-grid">
             <div class="metric-card">
                 <span class="metric-label">Queries executed</span>
-                <span class="metric-value">
+                <span class="metric-value"
+                    <?php if ($queriesValue !== null): ?>
+                        data-count-target="<?= htmlspecialchars(number_format($queriesValue, 0, '.', ''), ENT_QUOTES) ?>"
+                        data-count-type="integer"
+                    <?php endif; ?>
+                >
                     <?= htmlspecialchars(isset($metricsLatest) ? formatNumber($metricsLatest['queries_executed'] ?? null) : 'N/A', ENT_QUOTES) ?>
                 </span>
             </div>
@@ -28,7 +40,13 @@
             </div>
             <div class="metric-card">
                 <span class="metric-label">Total rows</span>
-                <span class="metric-value">
+                <span class="metric-value"
+                    <?php if ($rowsValue !== null): ?>
+                        data-count-target="<?= htmlspecialchars(number_format($rowsValue, 0, '.', ''), ENT_QUOTES) ?>"
+                        data-count-type="integer"
+                        data-count-role="rows"
+                    <?php endif; ?>
+                >
                     <?= htmlspecialchars(isset($metricsLatest) ? formatNumber($metricsLatest['total_rows_count'] ?? null) : 'N/A', ENT_QUOTES) ?>
                 </span>
             </div>
