@@ -106,6 +106,10 @@ $optionalSections = [
 ];
 
 $metricsLatest = loadLatestMetrics(__DIR__ . '/data/metrics.json');
+$stylePath = __DIR__ . '/assets/css/style.css';
+$styleVersion = is_readable($stylePath) ? (string) filemtime($stylePath) : (string) time();
+$scriptPath = __DIR__ . '/assets/js/app.js';
+$scriptVersion = is_readable($scriptPath) ? (string) filemtime($scriptPath) : (string) time();
 
 /**
  * @return array{date:string, queries_executed:int|float|null, total_disk_usage_bytes:int|float|null, total_data_uncompressed_bytes:int|float|null, total_rows_count:int|float|null}|null
@@ -191,8 +195,8 @@ function formatBytesToTB(?float $bytes): string
 
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script defer src="assets/js/app.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css?v=<?= htmlspecialchars($styleVersion, ENT_QUOTES) ?>">
+    <script defer src="assets/js/app.js?v=<?= htmlspecialchars($scriptVersion, ENT_QUOTES) ?>"></script>
 
     <script type="application/ld+json">
     {
